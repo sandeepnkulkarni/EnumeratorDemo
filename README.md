@@ -2,7 +2,19 @@
 
 This demo shows how to implement IEnumerable and IEnumerator in C++/CLI. This is needed because there is no support for `yield` keyword in C++/CLI.
 
-Another project written in C# which shows how to consume it.
+CppCliLib
+---
+Project written C++/CLI which shows how to implement IEnumerable and IEnumerator. 
+
+`DemoDataCollection`: Implements `IEnumerable<T>`. `T` is `DemoData`. Method `GetEnumerator` returns the object of type `DemoDataEnumerator`. 
+
+`DemoDataEnumerator`: Implements `IEnumerator<T>`. `T` is `DemoData`. Property `Current` returns the current value. Method `MoveNext` creates a new object of type `DemoData` and assign to be current value to be returned. 
+
+`DemoDataGenerator`: Has a method `GetDemoDataAsEnumerable` which returns `IEnumerable<DemoData>`.
+
+CSharpClient
+---
+Project written in C# which shows how to consume it.
 
 Reference
 ---
